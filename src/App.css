@@ -1,17 +1,31 @@
-.app-wrapper {
-  margin: 0 auto;
-  display: grid;
-  width: 1200px;
-  grid-template-areas: 
-  "h h"
-  "n c";
-  grid-template-rows: 60px 1fr;
-  grid-template-columns: 2fr 10fr;
-  /* grid-gap: 10px; */
+.App {
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.app-wrapper-content {
-    grid-area: c;
-    background-color: brown;
- 
+.appBody {
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  /* color: #6F40FE; */
+  text-shadow: 2px 0px 2px rgba(0, 0, 0, 1);
+
+  width: 30rem;
+  height: 43rem;
+
+  border: 1px solid rgba(255, 255, 255, 0.103);
+  border-radius: 10px;
+
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(11.0px);
+  -webkit-backdrop-filter: blur(11.0px);
+
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }

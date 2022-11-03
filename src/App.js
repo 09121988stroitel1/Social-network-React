@@ -1,40 +1,22 @@
-//  import React, { component } from 'react';
-import { Route, Routes } from 'react-router-dom';
+import React from 'react'
 import './App.css';
-import Dialogs from './components/Dialogs/Dialogs';
-import Header from './components/Header/Header';
-import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import TodoBody from './components/TodoBody.js/TodoBody';
 
-
-
-
-const App = (props) => {
-
- 
-
+function App(props) {
   return (
-    
-      <div className='app-wrapper'>
-        <Header />
-        <Navbar />
-        <div className='app-wrapper-content'>
-          <Routes>
-          
-            <Route path='/dialogs' element={<Dialogs state={props.state.dialogsPage}/>} />
-            <Route path='/profile' element={<Profile
-             profilePage={props.state.profilePage}
-             addPost={props.addPost}
-             updateNewPostText={props.updateNewPostText}
-             />} />
-          </Routes>
-        </div>
+    <div className="App">
+      <div className='appBody'>
+        <h1>TO-DO</h1>
 
+        <TodoBody
+          addTodo={props.addTodo}
+          dellTodo={props.dellTodo}
+          doneTodo={props.doneTodo}
+          state={props.state}
+        />
       </div>
-
+    </div>
   );
-
 }
-
 
 export default App;

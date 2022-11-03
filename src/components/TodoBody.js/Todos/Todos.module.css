@@ -1,0 +1,9 @@
+.Todos {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+    flex-direction: column;
+
+    width: 27rem;
+    height: 34rem;
+}
