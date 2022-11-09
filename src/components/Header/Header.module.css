@@ -9,3 +9,10 @@
     width: 100%;
     /* border: green solid 5px; */
 }
+.loginBlock {
+    float: right;
+    
+}
+.loginBlock a {
+    color: white;
+}

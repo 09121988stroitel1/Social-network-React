@@ -1,11 +1,6 @@
-import React, { component } from 'react';
-import s from './Dialogs.module.css';
-// import DialogItem from './DialogItem/DialogItem';
-// import Message from './Message/Message';
 import { sendMessageCreator } from '../../redux/dialogs-reducer';
 import { updateNewMessageTextCreator } from '../../redux/dialogs-reducer';
 import Dialogs from './Dialogs';
-// import StoreContext from '../../StoreContext';
 import { connect } from 'react-redux';
 
 
@@ -45,7 +40,8 @@ import { connect } from 'react-redux';
 
 let mapStateToProps = (state) => {
   return {
-    dialogsPage: state.dialogsPage
+    dialogsPage: state.dialogsPage,
+    isAuth: state.auth.isAuth
   }
 }
 let mapDispatchToProps = (dispatch) => {

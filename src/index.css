@@ -1,22 +1,10 @@
 body {
   margin: 0;
-  color: white;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* gradient */
-  /* background: rgb(0, 27, 163);
-  background: -moz-linear-gradient(90deg, rgba(0, 27, 163, 1) 0%, rgba(20, 0, 255, 1) 15%, rgba(118, 22, 175, 1) 36%, rgba(167, 51, 182, 1) 54%, rgba(241, 0, 49, 1) 100%);
-  background: -webkit-linear-gradient(90deg, rgba(0, 27, 163, 1) 0%, rgba(20, 0, 255, 1) 15%, rgba(118, 22, 175, 1) 36%, rgba(167, 51, 182, 1) 54%, rgba(241, 0, 49, 1) 100%);
-  background: linear-gradient(90deg, rgba(0, 27, 163, 1) 0%, rgba(20, 0, 255, 1) 15%, rgba(118, 22, 175, 1) 36%, rgba(167, 51, 182, 1) 54%, rgba(241, 0, 49, 1) 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#001ba3", endColorstr="#f10031", GradientType=1); */
-
-  background-image: url(./style/bg2.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
 }
 
 code {

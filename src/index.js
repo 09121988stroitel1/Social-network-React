@@ -1,25 +1,37 @@
+import './index.css';
+import store from './redux/redux-store';
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
-import store from './state/state'
+// import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
+// import StoreContext from './StoreContext';
+// import state from './redux/state';
+import { Provider } from 'react-redux';
 
-const render = (state) => {
-  ReactDOM.render(
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// addPost('React study');
+
+  root.render(
+  
     <React.StrictMode>
-      <App
-        state={state}
-        addTodo={store.addTodo}
-        dellTodo={store.dellTodo}
-        doneTodo={store.doneTodo}
+      <BrowserRouter>
+      <Provider store ={store}>
+      <App 
+      // state={state} dispatch={store.dispatch.bind(store)} store={store}
       />
-    </React.StrictMode>,
-    document.getElementById('root')
+      </Provider>
+      </BrowserRouter>
+   
+    </React.StrictMode>
   );
-}
 
-render(store.getState())
-store.rere(render)
 
-reportWebVitals();
+
+
+
+
+

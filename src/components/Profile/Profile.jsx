@@ -1,4 +1,4 @@
-import React, { component } from 'react';
+import React from 'react';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 import s from './Profile.module.css'
 import MyPostsContainer from './MyPosts/MyPostsContainer';
@@ -7,9 +7,8 @@ import MyPostsContainer from './MyPosts/MyPostsContainer';
 const Profile = (props) => {
   return (
   <div className={s.prof}>
-    <ProfileInfo />
+    <ProfileInfo profile={props.profile} />
     <MyPostsContainer 
-    // store={props.store} 
     />
   </div>
   )
