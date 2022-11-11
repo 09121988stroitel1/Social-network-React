@@ -2,9 +2,7 @@ import React from 'react';
 import s from './Dialogs.module.css';
 import DialogItem from './DialogItem/DialogItem';
 import Message from './Message/Message';
-import { Redirect } from "react-router-dom";
-// import {  Navigate } from "react-router-dom";
-
+// import { Navigate } from "react-router-dom";
 
 
 
@@ -29,38 +27,38 @@ const Dialogs = (props) => {
     let body = e.target.value
     props.updateNewMessageText(body)
   }
-  // alert(!props.isAuth)
-  if(!props.isAuth) {
-    return <Redirect to ="/login" />;
-//      return <Navigate replace to="/login" />;
-//     можно еще через useNavigete
-   } 
-
-  return (
-    <div className={s.dialogs}>
-
-      <div className={s.dialogsItem}>
-
-        {dialogsElements}
-
-      </div>
-
-      <div className={s.messages}>
-        <div>{messagesElements}</div>
-
-        <div>
-          <textarea onChange={onNewMessageChange}
-            placeholder='Enter your message'
-            value={newMessageText} />
+   
+  // if(!props.isAuth) {
+  //   return < Navigate to ="/login" />;
+  //  } 
+    return (
+      <div className={s.dialogs}>
+  
+        <div className={s.dialogsItem}>
+  
+          {dialogsElements}
+  
         </div>
-        <div>
-          <button onClick={onSendMessageClick}>Send</button>
-          {/* <button>Remove</button> */}
+  
+        <div className={s.messages}>
+          <div>{messagesElements}</div>
+  
+          <div>
+            <textarea onChange={onNewMessageChange}
+              placeholder='Enter your message'
+              value={newMessageText} />
+          </div>
+          <div>
+            <button onClick={onSendMessageClick}>Send</button>
+            {/* <button>Remove</button> */}
+          </div>
         </div>
+  
       </div>
+    )
+   
 
-    </div>
-  )
+  
 }
 
 export default Dialogs
