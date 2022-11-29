@@ -1,47 +1,52 @@
-import React, { component } from 'react';
+import React from 'react';
 import s from './MyPosts.module.css'
 import Post from './Post/Post';
+import { useForm } from "react-hook-form";
 
 
 
 
 const MyPosts = (props) => {
 
-let postElement = 
-props.posts.map(p =>  <Post message={p.message} likeCount={p.likesCount}/>);
-
- let newPostElement = React.createRef();
-
-let onAddPost = () => {
-  props.addPost()
-}
-
-let onPostChange = () => {
-  let text = newPostElement.current.value
-  props.updateNewPostText(text)
-
-}
+  let postElement =
+    props.posts.map(p => <Post message={p.message} likeCount={p.likesCount} />);
 
   return <div className={s.postsBlock}>
-   <h3>My post</h3> 
-    <div>
-      <div>
-        <textarea onChange={ onPostChange } 
-          ref={newPostElement}
-        value={props.newPostText}
-        />
-      </div>
-      <div>
-        <button onClick={ onAddPost }>Add post</button>
-        {/* <button>Remove</button> */}
-      </div>
-    </div>
+    <h3>My post</h3>
+
+    <AddNewPostForm addPost={props.addPost} />
+
     <div className={s.posts}>
-      { postElement }
+      {postElement}
     </div>
   </div>
+}
 
+const AddNewPostForm = (props) => {
+  const {
+    register,
+    handleSubmit,
+    reset
+  } = useForm({
+    mode: "onBlur",
+  });
 
+  const onSubmit = (data) => {
+    props.addPost(data.newPostText);
+
+    reset();
+  }
+  return (
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <div>
+        <textarea
+          {...register('newPostText')} />
+      </div>
+      <div>
+        <button type='submit'>Add post</button>
+      </div>
+    </form>
+  )
 }
 
 export default MyPosts
