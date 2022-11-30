@@ -2,6 +2,7 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import s from './FormControlLogin.module.css'
 import  login  from '../../../redux/auth-reducer';
+// import {connect} from 'react-redux'
 
 
 
@@ -79,7 +80,7 @@ const LoginForm = () => {
         </form>
     )
 }      
-
+// connect(null, (login))(LoginForm)
 
 const Login = () => {
     return <div>
