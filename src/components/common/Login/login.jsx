@@ -7,7 +7,7 @@ import  login  from '../../../redux/auth-reducer';
 
 
 
-const LoginForm = () => {
+const LoginForm = (props) => {
 
     const {
         register,
@@ -24,7 +24,7 @@ const LoginForm = () => {
     
     const onSubmit = (data) => {
     //   alert(data.email, data.password, data.rememberMe);
-    login(data.email, data.password, data.rememberMe) 
+    props.login(data.email, data.password, data.rememberMe) 
     reset();
     }
 
@@ -80,9 +80,19 @@ const LoginForm = () => {
         </form>
     )
 }      
-// connect(null, (login))(LoginForm)
 
-const Login = () => {
+// const mapStateToProps = (state) ({
+//     isAuth.state.auth.isAuth
+// })
+
+
+// connect(mapStateToProps, (login))(LoginForm)
+
+const Login = (props) => {
+    
+//     if(props.isAuth) {
+//         return <Redirect to ={'/profile'} />
+    
     return <div>
         <h1>Login</h1>
         <LoginForm  />
