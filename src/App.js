@@ -8,9 +8,6 @@ import ProfileContainer from './components/Profile/ProfileContainer';
 import UsersContainer from './components/Users/UsersContainer';
 
 
-
-
-
 const App = () => {
 
   return (

@@ -1,13 +1,13 @@
 import React from 'react';
 import { useForm } from "react-hook-form";
 import s from './FormControlLogin.module.css'
-import  login  from '../../../redux/auth-reducer';
+import  { login }  from '../../../redux/auth-reducer';
 // import {connect} from 'react-redux'
 
 
 
 
-const LoginForm = (props) => {
+const LoginForm = () => {
 
     const {
         register,
@@ -23,8 +23,10 @@ const LoginForm = (props) => {
     });
     
     const onSubmit = (data) => {
-    //   alert(data.email, data.password, data.rememberMe);
-    props.login(data.email, data.password, data.rememberMe) 
+        debugger
+    //    alert((data.email), (data.password), (data.rememberMe));
+    login(data.email, data.password, data.rememberMe) 
+    // hello(data.email)
     reset();
     }
 
@@ -80,19 +82,13 @@ const LoginForm = (props) => {
         </form>
     )
 }      
-
 // const mapStateToProps = (state) ({
-//     isAuth.state.auth.isAuth
+//     isAuth: state.auth.isAuth
 // })
 
+//  connect(null, (login))(LoginForm)
 
-// connect(mapStateToProps, (login))(LoginForm)
-
-const Login = (props) => {
-    
-//     if(props.isAuth) {
-//         return <Redirect to ={'/profile'} />
-    
+const Login = () => {
     return <div>
         <h1>Login</h1>
         <LoginForm  />
