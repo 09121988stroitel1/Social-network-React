@@ -2,13 +2,14 @@ import React from 'react';
 import { useForm } from "react-hook-form";
 import s from './FormControlLogin.module.css'
 import  { login }  from '../../../redux/auth-reducer';
+import { useDispatch } from 'react-redux';
 // import {connect} from 'react-redux'
 
 
 
 
 const LoginForm = () => {
-
+const dispatch = useDispatch()
     const {
         register,
         formState: {
@@ -25,7 +26,7 @@ const LoginForm = () => {
     const onSubmit = (data) => {
         debugger
     //    alert((data.email), (data.password), (data.rememberMe));
-    login(data.email, data.password, data.rememberMe) 
+    dispatch(login(data.email, data.password, data.rememberMe)) 
     // hello(data.email)
     reset();
     }
