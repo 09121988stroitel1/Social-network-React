@@ -8,6 +8,6 @@
     text-decoration: none;
   }
 
-  .active {
+  .item a.active {
     color: white;
   }
