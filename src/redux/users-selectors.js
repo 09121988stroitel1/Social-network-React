@@ -8,7 +8,7 @@ export const getUsersSuper = createSelector(getUsers1, (users)=> {
     return users.filter(u=> true)
 })
 
-export const gePageSize = (state) => {
+export const getPageSize = (state) => {
     return state.usersPage.pageSize
 }
 export const getTotalUsersCount = (state) => {
@@ -18,7 +18,7 @@ export const getCurrentPage = (state) => {
     return state.usersPage.currentPage
 }
 export const getIsFetching = (state) => {
-    return state.usersPage.isFetchin
+    return state.usersPage.isFetching
 }
 export const getFollowingInProgress = (state) => {
     return state.usersPage.followingInProgress
